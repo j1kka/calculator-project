@@ -67,7 +67,7 @@ document.addEventListener('keydown', (event) => {
 
 // Добавляем кнопку для переключения научного режима 
 const scientificButton = document.createElement('button');
-scientificButton.textContent = 'Scientific toggle';
+scientificButton.textContent = 'Scientific mode';
 scientificButton.classList.add('scientific-toggle');
 document.querySelector('.buttons').appendChild(scientificButton);
 
@@ -83,7 +83,7 @@ scientificButton.addEventListener('click', () => {
     });
 });
 
-// Создаем научные функции (Hard уровень)
+// Создаем научные функции 
 const scientificFunctions = [
     { text: '√', func: 'Math.sqrt' }, // Квадратный корень
     { text: '%', func: '/100' }, // Процент
