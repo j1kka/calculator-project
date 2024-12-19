@@ -4,51 +4,124 @@ body {
     align-items: center;
     height: 100vh;
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #f0f0f0; 
+    margin: 0;
 }
 
 .calculator {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    padding: 20px;
+    background-color: #ffffff; 
+    border-radius: 15px; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+    padding: 30px 20px;
+    width: 300px;
+    text-align: center;
 }
 
 .display {
     width: 100%;
     height: 60px;
-    margin-bottom: 10px;
-    font-size: 24px;
+    margin-bottom: 20px;
+    font-size: 32px;
     text-align: right;
     padding: 10px;
     box-sizing: border-box;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
 }
 
 .buttons {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 15px;
 }
 
 button {
-    padding: 15px;
-    font-size: 18px;
+    padding: 20px;
+    font-size: 20px;
     border: none;
-    background-color: #e0e0e0;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    background-color: #e0e0e0;
+    transition: background-color 0.3s, transform 0.1s ease;
+    color: #333; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 
 button:hover {
     background-color: #d0d0d0;
+    transform: translateY(-2px); 
 }
 
-.equal {
-    background-color: #4CAF50;
+
+button:active {
+    background-color: #c0c0c0;
+    transform: translateY(2px); 
+}
+
+
+button[data-operator] {
+    background-color: #ff9800; 
     color: white;
 }
 
-.clear {
+button[data-operator]:hover {
+    background-color: #fb8c00;
+}
+
+
+button.equal {
+    background-color: #4caf50; 
+    color: white;
+    grid-column: span 2; 
+}
+
+button.equal:hover {
+    background-color: #45a049;
+}
+
+
+button.clear {
     background-color: #f44336;
     color: white;
+}
+
+button.clear:hover {
+    background-color: #e53935;
+}
+
+
+button.decimal {
+    background-color: #ff5722; 
+    color: white;
+}
+
+button.decimal:hover {
+    background-color: #f4511e;
+}
+
+
+.display:focus {
+    outline: none;
+    box-shadow: 0 0 15px rgba(0, 128, 255, 0.8);
+}
+
+
+button {
+    animation: buttonAnimation 0.3s ease-out;
+}
+
+@keyframes buttonAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
