@@ -33,6 +33,12 @@ buttons.forEach(button => {
         if (button.classList.contains('clear')) {
             display.value = '';
         }
+        if (button.classList.contains('decimal')) {
+            if (!display.value.includes('.')) {  // Предотвращаем ввод нескольких точек
+                display.value += '.';
+            }
+        }
+        
     });
 });
 
@@ -62,6 +68,10 @@ document.addEventListener('keydown', (event) => {
             }
         } else if (key === 'Backspace') {
             display.value = display.value.slice(0, -1);
+        } else if (key === '.') {
+            if (!display.value.includes('.')) {  // Добавляем проверку для десятичной точки
+                display.value += '.';
+            }  
         } else {
             display.value += key;
         }
