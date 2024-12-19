@@ -49,11 +49,14 @@ document.addEventListener('keydown', (event) => {
         
         if (key === 'Enter') {
             try {
-                if (display.value.includes('/0')) {
+                if (display.value.includes('/0') || display.value.includes('0/')) {
                     display.value = 'Division by zero is not allowed!';
                     return;
-                }
+                }                
                 display.value = eval(display.value);
+                if (!isFinite(display.value)) {
+                    display.value = 'Invalid operation';
+                }
             } catch {
                 display.value = 'Error';
             }
