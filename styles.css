@@ -42,6 +42,7 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #4B0082;
 }
 
 button:hover {
@@ -62,6 +63,6 @@ button:focus {
 }
 
 .clear {
-    background-color: #4B0082;
+    background-color: #ff1493;
     color: white;
 } 
