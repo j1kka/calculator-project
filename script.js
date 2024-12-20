@@ -80,11 +80,21 @@ document.addEventListener('keydown', (event) => {
 
 // Добавляем кнопку для переключения научного режима 
 const scientificButton = document.createElement('button');
-scientificButton.textContent = 'Scientific mode';
+scientificButton.textContent = 'S-mode';
 scientificButton.classList.add('scientific-toggle');
 document.querySelector('.buttons').appendChild(scientificButton);
 
 let isScientificMode = false;
+
+// Создаем научные функции 
+const scientificFunctions = [
+    { text: '√', func: 'Math.sqrt' }, // Квадратный корень
+    { text: '%', func: '/100' }, // Процент
+    { text: 'sin', func: 'Math.sin' }, // Синус
+    { text: 'cos', func: 'Math.cos' }, // Косинус
+    { text: 'tan', func: 'Math.tan' } // Тангенс
+];
+
 
 // Переключатель научного режима
 scientificButton.addEventListener('click', () => {
@@ -96,14 +106,6 @@ scientificButton.addEventListener('click', () => {
     });
 });
 
-// Создаем научные функции 
-const scientificFunctions = [
-    { text: '√', func: 'Math.sqrt' }, // Квадратный корень
-    { text: '%', func: '/100' }, // Процент
-    { text: 'sin', func: 'Math.sin' }, // Синус
-    { text: 'cos', func: 'Math.cos' }, // Косинус
-    { text: 'tan', func: 'Math.tan' } // Тангенс
-];
 
 // Динамическое создание научных кнопок и добавление их функциональности
 scientificFunctions.forEach(func => {
